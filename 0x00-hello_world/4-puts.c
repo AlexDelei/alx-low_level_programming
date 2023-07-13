@@ -1,6 +1,8 @@
 #include <stdio.h>
-/**First C programming
- * Running puts function*/
+/**
+ *main - Prints"\"Programming is like building a multilingual puzzle"
+ *Return:The value 0
+ */
 int main(void)
 {
 	puts("\"Programming is like building a multilingual puzzle");
