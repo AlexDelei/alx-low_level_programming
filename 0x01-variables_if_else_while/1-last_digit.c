@@ -9,7 +9,7 @@
  * a program that prints last digit
  * of a random number
  */
-int main(int n, int LDT)
+int main(void)
 {
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
