@@ -3,8 +3,6 @@
 #include <time.h>
 /**
  * main - entry point
- * @n: random number
- * @LDT: lastdigit
  * Return:Always 0
  * a program that prints last digit
  * of a random number
