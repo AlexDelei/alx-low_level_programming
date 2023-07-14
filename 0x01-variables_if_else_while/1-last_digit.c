@@ -12,7 +12,7 @@ int main(void)
 	int n;
 	int LDT;
 
-	int LDT = n % 10;
+	LDT = n % 10;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
