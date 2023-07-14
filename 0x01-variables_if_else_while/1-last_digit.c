@@ -12,10 +12,10 @@ int main(void)
 	int n;
 	int LDT;
 
-	LDT = n % 10;
-
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
+
+	LDT = n % 10
 
 	if (LDT > 5)
 	{
