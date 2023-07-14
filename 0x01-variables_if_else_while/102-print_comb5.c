@@ -6,7 +6,7 @@
 int main(void)
 {
 	int i, j;
-	int LCT = 98 * 100 + 99
+	int LCT = 98 * 100 + 99;
 
 	for (i = 0; i <= 99; i++)
 	{
