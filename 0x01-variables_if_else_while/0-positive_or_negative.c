@@ -3,7 +3,7 @@
 #include <time.h>
 /**
  * main - Prints "n as a positive or zero or a negative number"
- * @n:Holds the stored random number
+ * @n:random number
  * Return:Success value (0)
  */
 int main(void)
