@@ -6,6 +6,7 @@
 int main(void)
 {
 	int i, j;
+	int LCT = 98 * 100 + 99
 
 	for (i = 0; i <= 99; i++)
 	{
@@ -23,7 +24,7 @@ int main(void)
 			putchar('0' + FDT2);
 			putchar('0' + SDT2);
 
-			if (i != 99 || j != 99)
+			if (i * 100 + j != LCT)
 			{
 				putchar(',');
 				putchar(' ');
