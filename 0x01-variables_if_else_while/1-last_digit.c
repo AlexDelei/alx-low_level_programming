@@ -3,14 +3,13 @@
 #include <time.h>
 /**
  * main - entry point
+ * @n: random number
  * Return:Always 0
  * a program that prints last digit
  * of a random number
  */
-int main(void)
+int main(int n)
 {
-	int n;
-
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 
