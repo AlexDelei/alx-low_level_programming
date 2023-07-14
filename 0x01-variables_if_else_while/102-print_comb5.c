@@ -7,14 +7,23 @@ int main(void)
 {
 	int i, j;
 
-	for (i = 0; i <= 0; i++)
+	for (i = 0; i <= 99; i++)
 	{
-		for (j = 1; j <= 99; j++)
-		{
-			putchar('0' + i);
-			putchar('0' + j);
+		int FDT = i / 10;
+		int SDT = i % 10;
 
-			if (i != 0 || j != 99)
+		for (j = i; j <= 99; i++)
+		{
+			int FDT2 = j / 10;
+			int SDT2 = j % 10;
+
+			putchar('0' + FDT);
+			putchar('0' + SDT);
+			putchar(' ');
+			putchar('0' + FDT2);
+			putchar('0' + SDT2);
+
+			if (i != 99 || j != 99)
 			{
 				putchar(',');
 				putchar(' ');
