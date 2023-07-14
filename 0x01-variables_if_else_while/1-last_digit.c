@@ -4,11 +4,12 @@
 /**
  * main - entry point
  * @n: random number
+ * @LDT: lastdigit
  * Return:Always 0
  * a program that prints last digit
  * of a random number
  */
-int main(int n)
+int main(int n, int LDT)
 {
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
