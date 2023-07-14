@@ -12,7 +12,7 @@ int main(void)
 		int FDT = i / 10;
 		int SDT = i % 10;
 
-		for (j = i; j <= 99; j++)
+		for (j = i + 1; j <= 99; j++)
 		{
 			int FDT2 = j / 10;
 			int SDT2 = j % 10;
