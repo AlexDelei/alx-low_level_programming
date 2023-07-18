@@ -4,7 +4,7 @@
  *
  *Return:Summation
  */
-int main(void)
+int main(int k, long sum)
 {
 	int i = 0;
 	long j = 1; k = 2; sum = 2;
