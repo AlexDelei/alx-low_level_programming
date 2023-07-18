@@ -1,4 +1,4 @@
-#include "1-alphabet.c"
+#include <stdio.h>
 /**
  * main - Entry point
  * Return:Success 0
