@@ -1,12 +1,8 @@
-#include <stdio.h>
-/**
- * main - Entry point
- * Return:Success 0
- */
+#ifndef MAIN_H
+#define MAIN_H
+
+int _putchar(char c);
 void print_alphabet(void);
-int main(void)
-{
-	int _putchar(char c);
-	print_alphabet();
-	return (0);
-}
+void print_alphabet_x10(void);
+
+#endif
