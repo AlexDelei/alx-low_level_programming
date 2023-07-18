@@ -1,7 +1,8 @@
 #include <stdio.h>
 /**
+ *main - Fibonacci numbers
  *
- *
+ *Return:Always 0
  */
 int main(void)
 {
