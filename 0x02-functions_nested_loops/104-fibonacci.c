@@ -10,6 +10,7 @@ void fibonacci_sequence(int limit)
 {
 	int a = 1, b = 2;
 	int count;
+	int temp;
 
 	while (count < limit)
 	{
@@ -22,7 +23,7 @@ void fibonacci_sequence(int limit)
 			printf("%d\n", a);
 		}
 
-		int temp = b;
+		temp = b;
 		b = a + b;
 		a = temp;
 		count++;
