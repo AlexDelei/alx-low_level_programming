@@ -1,7 +1,5 @@
 #include <stdio.h>
 /**
- *main - calls the function fibonacci_sequence
- *
  *fibonacci_sequence - This function will generate and print fibonacci numbers
  *@a:stores the first last number
  *@b:stores the last last number
@@ -35,6 +33,10 @@ void fibonacci_sequence(int limit)
 		count++;
 	}
 }
+/**
+ * main - calls the function fibonacci_sequence
+ * Return:Success value 0
+ */
 int main(void)
 {
 	fibonacci_sequence(98);
