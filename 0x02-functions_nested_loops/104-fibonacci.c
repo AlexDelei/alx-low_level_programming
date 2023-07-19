@@ -1,16 +1,22 @@
 #include <stdio.h>
 /**
+ *main - calls the function fibonacci_sequence
+ *
  *fibonacci_sequence - This function will generate and print fibonacci numbers
  *@a:stores the first last number
  *@b:stores the last last number
+ *@limit:parameter to store value
  *
- *main - we call the fibonacci_sequence
+ *Return: Always 0
  */
 void fibonacci_sequence(int limit)
 {
-	int a = 1, b = 2;
+	int a, b;
 	int count;
 	int temp;
+
+	a = 1;
+	b = 2;
 
 	while (count < limit)
 	{
