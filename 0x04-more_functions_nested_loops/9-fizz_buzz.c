@@ -1,7 +1,6 @@
 #include <stdio.h>
 /**
  *main - prints 1 to 100 with multiples of 3 and 5 in words
- *@i:loop
  *Return:always 0
  */
 int main(void)
