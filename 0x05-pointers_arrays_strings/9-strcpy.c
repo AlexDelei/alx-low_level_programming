@@ -4,7 +4,7 @@
  * *_strcpy - copying function
  * @dest:destination
  * @src: what to be copied
- *
+ * Return: Copy of src
  */
 char *_strcpy(char *dest, char *src)
 {
