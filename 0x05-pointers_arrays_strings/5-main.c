@@ -12,6 +12,7 @@ int main(void)
 
 	printf("%s\n", s);
 	rev_string(s);
-	printf("%s\n", s);
+	putchar(s[10]);
+	putchar('\n');
 	return (0);
 }
