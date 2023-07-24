@@ -14,6 +14,6 @@ void rev_string(char *s)
 	else
 	{
 		rev_string(s + 1);
-		putchar(*s);
+		putchar(s[]);
 	}
 }
