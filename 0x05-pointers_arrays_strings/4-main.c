@@ -14,5 +14,6 @@ int main(void)
 	print_rev(str);
 	putchar('\n');
 	putchar('\n');
+	putchar('\n');
 	return (0);
 }
