@@ -8,8 +8,10 @@
 
 void generatePassword(char *pswd, int len)
 {
+	int i;
+
 	static const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-	for (int i = 0; i < len; i++)
+	for (i = 0; i < len; i++)
 	{
 		int index = rand() % (sizeof(charset) - 1);
 		pswd[i] = charset[index];
