@@ -13,6 +13,7 @@ int _atoi(char *s)
 {
 	int sign = 1; /*Initializing the sign to positive by default*/
 	int result = 0;
+	int digit;
 
 	/*Step 1: Handling whitespace characters*/
 	while (*s == ' ')
@@ -25,7 +26,7 @@ int _atoi(char *s)
 	{
 		if (*s == '-')
 		{
-			/*sign *= -1 ;*//* Change the sign if a '-' is encountered*/
+			sign *= -1 ;/* Change the sign if a '-' is encountered*/
 		}
 		s++;
 	}
@@ -33,7 +34,14 @@ int _atoi(char *s)
 	/*Step 3: Converting the sequence of digits to an integer*/
 	while (*s >= '0' && *s <= '9')
 	{
-		result = result * 10 + (*s - '0');/*Update the result*/
+		 digit = *s - '0'; /* Convert the character digit to an integer digit*/
+		 /* Check for overflow before updating the result*/
+		if (result > INT_MAX / 10 || (result == INT_MAX / 10 && digit > INT_MAX % 10))
+		{
+			/* Overflow, return INT_MAX for positive or INT_MIN for negative*/
+			return (sign == 1) ? INT_MAX : INT_MIN;
+		}
+		result = result * 10 + digit;/*Update the result*/
 		s++;
 	}
 
