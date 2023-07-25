@@ -27,6 +27,6 @@ int main()
 	passwordLength = 10;
 
 	generatePassword(pswd, passwordLength);
-	printf("Random Password is: %s\n", pswd);
+	printf("Tada! Congrats\n");
 	return (0);
 }
