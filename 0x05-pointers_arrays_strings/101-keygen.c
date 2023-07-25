@@ -20,8 +20,10 @@ void generatePassword(char *pswd, int len)
 }
 int main()
 {
+	int passwordLength;
+
 	srand((unsigned int)time(NULL));
-	int passwordLength = 10;
+	passwordLength = 10;
 	char pswd[MAX_PASSWORD_LENGTH + 1];
 
 	generatePassword(pswd, passwordLength);
