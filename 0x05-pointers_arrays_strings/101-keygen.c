@@ -21,10 +21,10 @@ void generatePassword(char *pswd, int len)
 int main()
 {
 	int passwordLength;
+	char pswd[MAX_PASSWORD_LENGTH + 1];
 
 	srand((unsigned int)time(NULL));
 	passwordLength = 10;
-	char pswd[MAX_PASSWORD_LENGTH + 1];
 
 	generatePassword(pswd, passwordLength);
 	printf("Random Password is: %s\n", pswd);
