@@ -6,18 +6,18 @@
 
 /*Function to generate a random password*/
 
-void generatePassword(char *pswd, int len)
-{
-	int i;
+/*void generatePassword(char *pswd, int len)*/
+/*{*/
+	/*int i;*/
 
-	static const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-	for (i = 0; i < len; i++)
-	{
-		int index = rand() % (sizeof(charset) - 1);
-		pswd[i] = charset[index];
-	}
-	pswd[len] = '\0';
-}
+	/*static const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";*/
+	/*for (i = 0; i < len; i++)*/
+	/*{*/
+		/*int index = rand() % (sizeof(charset) - 1);*/
+		/*pswd[i] = charset[index];*/
+	/*}*/
+	/*pswd[len] = '\0';*/
+/*}*/
 int main()
 {
 	/*int pswdLength;*/
