@@ -36,7 +36,7 @@ int _atoi(char *s)
 	{
 		digit = *s - '0'; /* Convert the character digit to an integer digit*/
 		 /* Check for overflow before updating the result*/
-		if (result > INT_MAX /10 || (result == INT_MAX /10 && digit > INT_MAX %10))
+		if (result > INT_MAX / 10 || (result == INT_MAX / 10 && digit > INT_MAX % 10))
 		{
 			/* Overflow, return INT_MAX for positive or INT_MIN for negative*/
 			return ((sign == 1) ? (INT_MAX) : (INT_MIN));
