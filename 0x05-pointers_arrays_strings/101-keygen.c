@@ -6,27 +6,45 @@
 
 /*Function to generate a random password*/
 
-void generatePassword(char *password, int length)
-{
-	int i;
-
-	static const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-	for (i = 0; i < length; i++)
-	{
-		int index = rand() % (sizeof(charset) - 1);
-		password[i] = charset[index];
-	}
-	password[length] = '\0';
-}
 int main()
 {
-	int passwordLength;
-	char password[MAX_PASSWORD_LENGTH + 1];
+	char pswd[84];
+	int index = 0, sum = 0, dif_1, dif_2;
 
-	srand((unsigned int)time(NULL));
-	passwordLength = 15;
+	srand(time(0));
 
-	generatePassword(password, passwordLength);
-	printf("Tada! Congrats%d\n", passwordLength);
+	while (sum < 2772)
+	{
+		pswd[index] = 33 + rand() % 94;
+		sum += pswd[index++];
+	}
+	pswd[index] = '\0';
+	if (sum != 2772)
+	{
+		dif_1 = (sum - 2772)/2;
+		dif_2 = (sum - 2772)/2;
+
+		if ((sum - 2772) % 2 != 0)
+		{
+			dif_1++;
+		}
+		for (index = 0; pswd[index]; index++)
+		{
+			if (pswd[index] >= (33 + dif_1))
+			{
+				pswd[index] -= dif_1;
+				break;
+			}
+		}
+		for (index = 0; pswd[index]; index++)
+		{
+			if (pswd[index] >= (33 + dif_2))
+			{
+				pswd[index] -= dif_2;
+				break;
+			}
+		}
+	}
+	printf("%s", pswd);
 	return (0);
 }
