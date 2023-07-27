@@ -1,34 +1,40 @@
 #include "main.h"
-#include <stdio.h>
-#include <ctype.h>
-/**
- **cap_string - Capitalizez the first letter in a word
- *@str:Pointer to the string
- *
- */
-char* cap_string(char* str)
-{
-	int capitalize_next = 1;
-	char* ptr = str;
 
-	while (*ptr)
+/**
+ * cap_string - capitalize all words of a string
+ * @str: string
+ * Return: `str`
+ */
+
+char *cap_string(char *str)
+{
+	int i = 0;
+
+	while (str[i])
 	{
-		if (isspace(*ptr) || *ptr == ',' || *ptr == ';' || *ptr == '.' || *ptr == '!' || *ptr == '?' ||
-*ptr == '"' || *ptr == '(' || *ptr == ')' || *ptr == '{' || *ptr == '}')
+		while (!(str[i] >= 'a' && str[i] <= 'z'))
 		{
-			capitalize_next = 1;
+			i++;
+
+		if (str[i - 1] == ' ' ||
+		    str[i - 1] == '\t' ||
+		    str[i - 1] == '\n' ||
+		    str[i - 1] == ',' ||
+		    str[i - 1] == ';' ||
+		    str[i - 1] == '.' ||
+		    str[i - 1] == '!' ||
+		    str[i - 1] == '?' ||
+		    str[i - 1] == '"' ||
+		    str[i - 1] == '(' ||
+		    str[i - 1] == ')' ||
+		    str[i - 1] == '{' ||
+		    str[i - 1] == '}' ||
+		    i == 0)
+			str[i] -= 32;
+
+		i++;
 		}
-		else if (capitalize_next)
-		{
-			*ptr = toupper(*ptr);
-			capitalize_next = 0;
-		}
-		else
-		{
-			*ptr = tolower(*ptr); /* Change this line to tolower instead of toupper*/
-		}
-	ptr++;
 	}
 
-	return str;
+	return (str);
 }
