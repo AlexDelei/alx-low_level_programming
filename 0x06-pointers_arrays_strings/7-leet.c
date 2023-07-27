@@ -1,5 +1,7 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 /**
  * *leet - encodes a string
  * @input:string to be encoded
@@ -8,30 +10,37 @@
  */
 char *leet(char *input)
 {
-	int i;
+	char original[] = "aeotlAEOTL";
+	char leet_replace[] = "43071";
 
-	for (i = 0; input[i] != '\0'; i++)
+	int i, j;
+	size_t len = strlen(input);
+
+	/* Create a new string to store the leet encoded text*/
+	char *encoded = (char *)malloc((len + 1) * sizeof(char));
+
+	/*if (encoded == NULL)*/
+	/*{*/
+		/*perror("Memory allocation failed");*/
+		/*exit(EXIT_FAILURE);*/
+	/*}*/
+
+	/*Initialize encoded string with input string*/
+	strcpy(encoded, input);
+
+	/*First loop: Iterate through the original characters*/
+	for (i = 0; original[i]; i++)
 	{
-		while (input[i] == 'a' || input[i] == 'A')
+	/* Second loop: Iterate through the encoded string*/
+		for (j = 0; encoded[j]; j++)
 		{
-			input[i] = '4';
-		}
-		while (input[i] == 'e' || input[i] == 'E')
-		{
-			input[i] = '3';
-		}
-		while (input[i] == 'o' || input[i] == 'O')
-		{
-			input[i] = '0';
-		}
-		while (input[i] == 't' || input[i] == 'T')
-		{
-			input[i] = '7';
-		}
-		while (input[i] == 'l' || input[i] == 'L')
-		{
-			input[i] = '1';
+			/*If a character matches one of the original letters, replace it with the corresponding leet character*/
+			if (encoded[j] == original[i])
+			{
+				encoded[j] = leet_replace[i / 2];
+			}
 		}
 	}
-	return (input);
+
+	return (encoded);
 }
