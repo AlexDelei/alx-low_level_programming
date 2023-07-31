@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * *_memset _ fills the first bytes of the memory
+ * *_memset - fills the first bytes of the memory
  * @s:Pointer to char variable
  * @b:Constant byte to be stored
  * @n:Number of bytes
