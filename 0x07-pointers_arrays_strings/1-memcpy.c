@@ -6,6 +6,7 @@
  * @src:pointer to source
  * @n:number of bytes
  *
+ * Return:the copied bytes
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
