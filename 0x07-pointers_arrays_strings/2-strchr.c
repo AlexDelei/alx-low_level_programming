@@ -5,6 +5,7 @@
  * @s:pointer to the string
  * @c:Character to be located
  *
+ * Return:Null
  */
 char *_strchr(char *s, char c)
 {
