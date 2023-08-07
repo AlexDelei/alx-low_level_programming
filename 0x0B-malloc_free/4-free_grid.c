@@ -13,11 +13,6 @@ void free_grid(int **grid, int height)
 	int h;
 
 	h = height;
-	if (grid == NULL)
-	{
-		return (NULL);
-	}
-
 	/*freeing memory for each row*/
 	for (i = 0; i < h; i++)
 	{
