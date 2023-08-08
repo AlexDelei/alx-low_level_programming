@@ -1,124 +1,67 @@
 #include "main.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdio.h>
-/**
- *is_space - checks for spaces
- *@c: the spaces
- *Return:spaces
- */
-int is_space(char c)
-{
-	return (c == ' ' || c == '\t' || c == '\n');
-}
-/**
- *count_words - counts the words in the string
- *@str:the string
- *Return: count
- */
-int count_words(char *str)
-{
-	int word_count = 0;
-	int in_word = 0;
-	int i;
+#include <stdlib.h>
 
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		if (!is_space(str[i]))
-		{
-			if (!in_word)
-			{
-				word_count++;
-				in_word = 1;
-			}
-		}
-		else
-		{
-			in_word = 0;
-		}
-	}
-
-	return (word_count);
-}
 /**
- *strtow - splits string into words
- *@str: the string
+ * ch_free_grid - frees a 2 dimensional array.
+ * @grid: multidimensional array of char.
+ * @height: height of the array.
  *
- * Return:the words
+ * Return: no return
+ */
+void ch_free_grid(char **grid, unsigned int height)
+{
+	if (grid != NULL && height != 0)
+	{
+		for (; height > 0; height--)
+			free(grid[height]);
+		free(grid[height]);
+		free(grid);
+	}
+}
+
+/**
+ * strtow - splits a string into words.
+ * @str: string.
+ *
+ * Return: pointer of an array of integers
  */
 char **strtow(char *str)
 {
-	int i, j;
-	int num_words;
-	int word_index;
-	int word_start;
-	int word_length;
-	char **words;
+	char **aout;
+	unsigned int c, height, i, j, a1;
 
 	if (str == NULL || *str == '\0')
+		return (NULL);
+	for (c = height = 0; str[c] != '\0'; c++)
+		if (str[c] != ' ' && (str[c + 1] == ' ' || str[c + 1] == '\0'))
+			height++;
+	aout = malloc((height + 1) * sizeof(char *));
+	if (aout == NULL || height == 0)
 	{
+		free(aout);
 		return (NULL);
 	}
-
-	num_words = count_words(str);
-
-	words = (char **)malloc((num_words + 1) * sizeof(char *));
-	if (words == NULL)
+	for (i = a1 = 0; i < height; i++)
 	{
-		return (NULL);
-	}
-	word_index = 0;
-	word_start = 0;
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		if (!is_space(str[i]))
+		for (c = a1; str[c] != '\0'; c++)
 		{
-			if (i == 0 || is_space(str[i - 1]))
+			if (str[c] == ' ')
+				a1++;
+			if (str[c] != ' ' && (str[c + 1] == ' ' || str[c + 1] == '\0'))
 			{
-				word_start = i;
-			}
-		}
-		else
-		{
-			if (i > 0 && !is_space(str[i - 1]))
-			{
-				word_length = i - word_start;
-				words[word_index] = (char *)malloc((word_length + 1) * sizeof(char));
-				if (words[word_index] == NULL)
+				aout[i] = malloc((c - a1 + 2) * sizeof(char));
+				if (aout[i] == NULL)
 				{
-					for (j = 0; j < word_index; j++)
-					{
-						free(words[j]);
-					}
-					free(words);
+					ch_free_grid(aout, i);
 					return (NULL);
 				}
-			strncpy(words[word_index], str + word_start, word_length);
-			words[word_index][word_length] = '\0';
-			word_index++;
+				break;
 			}
 		}
+		for (j = 0; a1 <= c; a1++, j++)
+			aout[i][j] = str[a1];
+		aout[i][j] = '\0';
 	}
-
-	if (!is_space(str[strlen(str) - 1]))
-	{
-		word_length = strlen(str) - word_start;
-		words[word_index] = (char *)malloc((word_length + 1) * sizeof(char));
-		if (words[word_index] == NULL)
-		{
-			for (j = 0; j <= word_index; j++)
-			{
-				free(words[j]);
-			}
-			free(words);
-			return (NULL);
-		}
-		strncpy(words[word_index], str + word_start, word_length);
-		words[word_index][word_length] = '\0';
-		word_index++;
-	}
-
-	words[word_index] = NULL;
-
-	return (words);
+	aout[i] = NULL;
+	return (aout);
 }
