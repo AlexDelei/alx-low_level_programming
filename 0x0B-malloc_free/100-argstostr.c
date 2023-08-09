@@ -28,16 +28,16 @@ char *argstostr(int ac, char **av)
 		}
 	}
 
-	s = (char *)malloc(c + 1);
+	s = (char *)malloc(c);
 	if (s == NULL)
 	{
 		return (NULL);
 	}
-	for (i = 0; i < ac; i++)
+	for (i = 0; i < ac; ++i)
 	{
-		*s = *av[i];
-		if (*av[i] != '\0')
+		if (*av[i] != '\0' && av[i - 1])
 		{
+			*s = *av[i];
 			printf("%s\n", av[i]);
 		}
 	}
