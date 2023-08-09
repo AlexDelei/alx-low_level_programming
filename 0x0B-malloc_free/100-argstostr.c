@@ -24,7 +24,7 @@ char *argstostr(int ac, char **av)
 	{
 		if (*av[j] != '\0')
 		{
-			c += *av[j];
+			c += *av[j] + 1;
 		}
 	}
 
@@ -35,9 +35,9 @@ char *argstostr(int ac, char **av)
 	}
 	for (i = 0; i < ac; ++i)
 	{
-		s = av[i];
-		printf("%s\n", s);
+		s[i] = *av[i];
+		printf("%s\n", av[i]);
 	}
-	av[i] = '\0';
+	s[i] = '\0';
 	return (s);
 }
