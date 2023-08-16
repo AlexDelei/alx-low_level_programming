@@ -31,7 +31,7 @@ int main(int ac, char *av[])
 			printf("%02hhx\n", mainPtr[i]);
 			break;
 		}
-		printf("%02x", mainPtr[i]);
+		printf("%02hhx", mainPtr[i]);
 	}
 	printf("\n");
 
