@@ -26,7 +26,7 @@ int main(int ac, char *av[])
 	n2 = atoi(av[3]);
 
 	func = get_op_func(av[2]);
-	
+
 	if (!func)
 	{
 		printf("Error\n");
