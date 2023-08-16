@@ -33,7 +33,5 @@ int main(int ac, char *av[])
 		}
 		printf("%02hhx", mainPtr[i]);
 	}
-	printf("\n");
-
 	return (0);
 }
