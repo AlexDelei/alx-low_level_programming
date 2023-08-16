@@ -9,7 +9,7 @@
  */
 int main(int ac, char *av[])
 {
-	int numbyt;
+	int numbyt, i;
 	unsigned char *mainPtr;
 
 	if (ac != 2)
