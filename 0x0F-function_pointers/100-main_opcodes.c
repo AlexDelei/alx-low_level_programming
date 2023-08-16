@@ -10,7 +10,7 @@
 int main(int ac, char *av[])
 {
 	int numbyt, i;
-	unsigned char *mainPtr;
+	char *mainPtr;
 
 	if (ac != 2)
 	{
@@ -23,7 +23,7 @@ int main(int ac, char *av[])
 		printf("Error\n");
 		return (2);
 	}
-	mainPtr = (unsigned char *)main;
+	mainPtr = (char *)main;
 	for (i = 0; i < numbyt; i++)
 	{
 		if (i == numbyt - 1)
