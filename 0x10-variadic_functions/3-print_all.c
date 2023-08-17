@@ -19,7 +19,7 @@ void print_all(const char * const format, ...)
 	va_start(ap, format);
 	while (format && format[i])
 	{
-		if (i > 0 && format[i + 0])
+		if (i != 0 && format[i - 1] != ',' && format[i] != ',')
 		{
 			printf(", ");
 		}
