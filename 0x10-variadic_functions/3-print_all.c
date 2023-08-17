@@ -4,56 +4,40 @@
 /**
  * print_all - prints any arguement
  * @format: data type format
- *
- *
  */
 void print_all(const char * const format, ...)
 {
 	unsigned int i = 0;
-	char c_arg;
-	int i_arg;
-	double f_arg;
-	char *s_arg;
+	char *nem = "", *it;
 	va_list ap;
 
 	va_start(ap, format);
 	while (format && format[i])
 	{
-		if (i != 0 && format[i - 1] != ',' && format[i] != ',')
-		{
-			printf(", ");
-		}
 		switch (format[i])
 		{
 			case 'c':
-				c_arg = (char)va_arg(ap, int);
-				printf("%c", c_arg);
+				printf("%s%c", nem, (char)va_arg(ap, int));
 				break;
-
 			case 'i':
-				i_arg = va_arg(ap, int);
-				printf("%d", i_arg);
+				printf("%s%d", nem, va_arg(ap, int));
 				break;
-
 			case 'f':
-				f_arg = va_arg(ap, double);
-				printf("%f", f_arg);
+				printf("%s%f", nem, va_arg(ap, double));
 				break;
-
 			case 's':
-				s_arg = va_arg(ap, char*);
-				if (s_arg == NULL)
+				it = va_arg(ap, char*);
+				if (!it)
 				{
-					printf("(nil)");
+					it = "(nil)";
 				}
-				else
-				{
-					printf("%s", s_arg);
-					break;
-				}
-			default:
+				printf("%s%s", nem, va_arg(ap, char*));
 				break;
+			default:
+				i++;
+				continue;
 		}
+		nem = ", ";
 		i++;
 	}
 	va_end(ap);
