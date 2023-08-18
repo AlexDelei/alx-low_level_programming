@@ -26,12 +26,8 @@ int main(int ac, char *av[])
 	mainPtr = (char *)main;
 	for (i = 0; i < numbyt; i++)
 	{
-		if (i == numbyt - 1)
-		{
-			printf("%02hhx\n", mainPtr[i]);
-			break;
-		}
 		printf("%02hhx", mainPtr[i]);
 	}
+	printf("\n");
 	return (0);
 }
