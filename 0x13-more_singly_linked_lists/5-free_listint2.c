@@ -6,13 +6,13 @@
  */
 void free_listint2(listint_t **head)
 {
-	listint_t *current, *temp;/*Declaring a pointer to traverse your list*/
+	listint_t *current;/*Declaring a pointer to traverse your list*/
 
 	current = *head;
-
 	while (current != NULL)
 	{
-		temp = current;
+		listint_t *temp = current;
+
 		current = current->next;
 		free(temp);
 	}
