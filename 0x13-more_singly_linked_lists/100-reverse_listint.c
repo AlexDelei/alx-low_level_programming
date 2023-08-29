@@ -12,13 +12,11 @@ listint_t *reverse_listint(listint_t **head)
 
 	while (current != NULL)
 	{
-		listint_t *next = current->next;
-
-		current->next = prev;
-		prev = current;
-		current = next;
+		prev = (*head)->next;
+		(*head)->next = prev;
+		current = (*head);
 	}
 
-	*head = prev;
+	*head = current;
 	return (*head);
 }
