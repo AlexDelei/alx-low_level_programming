@@ -33,14 +33,16 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	}
 	/*inserting in the middle*/
 	current = *head;
-	while (current != NULL && count < idx - 1)
+	for (count = 0; count < idx - 1; count++)
 	{
 		if (current == NULL)
-		{
 			return (NULL);
-		}
-		count++;
+		current = current->next;
 	}
+
+	if (current == NULL)
+		return (NULL);
+
 	new_node->next = current->next;
 	current->next = new_node;
 	return (new_node);
