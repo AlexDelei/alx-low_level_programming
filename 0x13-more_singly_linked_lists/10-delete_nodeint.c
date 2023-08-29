@@ -23,7 +23,6 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		free(temp);
 		return (1);
 	}
-	current = *head;
 	while (current != NULL && count < index - 1)
 	{
 		prev = current;
