@@ -9,11 +9,6 @@ size_t free_listint_safe(listint_t **h)
 {
 	size_t cn = 0;
 
-	if (*h == NULL)
-	{
-		return;
-	}
-
 	while (*h != NULL)
 	{
 		listint_t *current = *h;
