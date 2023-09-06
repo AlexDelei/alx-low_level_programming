@@ -57,6 +57,6 @@ int main(int argc, char *argv[])
 	{
 		dprintf(STDERR_FILENO, "Error: Can't set permissions for file %s\n", file_to);
 		exit(95);
-        }
+	}
 	return (0);
 }
