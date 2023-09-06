@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
 		exit(100);
 	}
-	if (chmod(file_to, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH) == -1)
+	if (chmod(file_to, 0664) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't set permissions for file %s\n", file_to);
 		exit(95);
