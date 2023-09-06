@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	if (fd_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
-		exit(98);
+		exit(99);
 	}
 	while ((bytes_read = read(fd_from, buffer, BUFFER_SIZE)) > 0)
 	{
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 	if (chmod(file_to, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't set permissions for file %s\n", file_to);
-		exit(99);
+		exit(95);
         }
 	return (0);
 }
