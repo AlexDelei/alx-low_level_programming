@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 {
 	const char *file_from = argv[1], *file_to = argv[2];
 	int fd_from, fd_to;
-	char buffer[1024];
+	char buffer[3000];
 	ssize_t bytes_read, bytes_written;
 
 	if (argc != 3)
