@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 {
 	const char *file_from = argv[1], *file_to = argv[2];
 	int fd_from, fd_to;
-	char buffer[BUFFER_SIZE];
+	char buffer[1024];
 	ssize_t bytes_read, bytes_written;
 
 	if (argc != 3)
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
-	while ((bytes_read = read(fd_from, buffer, BUFFER_SIZE)) > 0)
+	while ((bytes_read = read(fd_from, buffer, 1024)) > 0)
 	{
 		bytes_written = write(fd_to, buffer, bytes_read);
 		if (bytes_written == -1)
