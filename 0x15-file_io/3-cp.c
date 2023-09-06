@@ -9,12 +9,12 @@ int main(int argc, char *argv[])
 {
 	const char *file_from = argv[1], *file_to = argv[2];
 	int fd_from, fd_to;
-	char buffer[3000];
+	char buffer[1024];
 	ssize_t bytes_read, bytes_written;
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", argv[0]);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	fd_from = open(file_from, O_RDONLY);
