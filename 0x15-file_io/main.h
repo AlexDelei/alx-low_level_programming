@@ -15,7 +15,6 @@ int append_text_to_file(const char *filename, char *text_content);
 void error_exit(int code, const char *format, const char *arg);
 int main(int argc, char *argv[]);
 void print_elf_header_info(unsigned char *elf_header);
-void handleError(const char *message, int exitCode);
 void copyFile(const char *file_from, const char *file_to);
 void handle_error(int error_code, const char *file_path);
 #endif
