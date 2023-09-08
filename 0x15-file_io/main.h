@@ -1,6 +1,5 @@
 #ifndef MAIN_H
 #define MAIN_H
-#define BUFFER_SIZE 1024
 #define ELF_HEADER_SIZE 64
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,4 +17,5 @@ int main(int argc, char *argv[]);
 void print_elf_header_info(unsigned char *elf_header);
 void handleError(const char *message, int exitCode);
 void copyFile(const char *file_from, const char *file_to);
+void handle_error(int error_code, const char *file_path);
 #endif
