@@ -7,7 +7,7 @@ void display_elf_header_info(ElfHeader *header)
 {
 printf("ELF Header:\n");
 printf("  Magic:   %.2x %.2x %.2x %.2x\n", header->magic[0], header->magic[1], header->magic[2], header->magic[3]);
-printf("  Class:                         %s\n", header.e_ident[EI_CLASS]);
+printf("  Class:                         %s\n", header->class == 1 ? "ELF32" : "ELF64");
 printf("  Data:                          %s\n", header->data == 1 ? "2's complement, little endian" : "2's complement, big endian");
 printf("  Version:                       %u (current)\n", header->version);
 printf("  OS/ABI:                        %u\n", header->os_abi);
