@@ -8,5 +8,14 @@
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	return (dest);
+	char *original_dest = dest;
+
+	for (; n > 0 && (*dest = *src); dest++, src++, n--)
+	{
+	}
+	for (; n > 0; dest++, n--)
+	{
+		*dest = '\0';
+	}
+	return (original_dest);
 }

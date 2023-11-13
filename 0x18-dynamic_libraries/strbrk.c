@@ -7,5 +7,11 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	return (NULL);
+	
+	while (*s != '\0' && _strchr(accept, *s) != NULL)
+	{
+		s++;
+	}
+
+	return ((*s == '\0') ? NULL : s);
 }
