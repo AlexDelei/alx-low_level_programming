@@ -33,9 +33,12 @@ shash_table_t *shash_table_create(unsigned long int size)
  */
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
-	shash_node_t *new_node, *current, *prev;
+	shash_node_t *current, *prev;
+	shash_node_t *new_node = malloc(sizeof(shash_node_t));
+
 	unsigned long int index;
 
+	index = key_index((const unsigned char *)key, ht->size);
 	if (ht == NULL || key == NULL || *key == '\0')
 	{
 		return (0);
@@ -144,7 +147,7 @@ void shash_table_print_rev(const shash_table_t *ht)
  */
 void shash_table_delete(shash_table_t *ht)
 {
-	shash_node_t *current, temp;
+	shash_node_t *current, *temp;
 
 	current = ht->shead;
 	while (current != NULL)
