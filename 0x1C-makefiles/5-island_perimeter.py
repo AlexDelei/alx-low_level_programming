@@ -55,3 +55,4 @@ grid = [
         [0, 0, 0, 0, 0, 0]
     ]
 result = island_perimeter(grid)
+print(result)
