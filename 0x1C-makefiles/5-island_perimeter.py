@@ -46,4 +46,13 @@ def island_perimeter(grid):
     return perimeter
 
 
-
+# Example usage:
+grid = [
+        [0, 0, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0],
+        [0, 1, 1, 1, 0, 0],
+        [0, 0, 0, 0, 0, 0]
+    ]
+result = island_perimeter(grid)
+print(result)
