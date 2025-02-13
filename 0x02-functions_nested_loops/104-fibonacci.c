@@ -1,44 +1,45 @@
 #include <stdio.h>
 /**
- *fibonacci_sequence - This function will generate and print fibonacci numbers
- *@a:stores the first last number
- *@b:stores the last last number
- *@limit:parameter to store value
- *
- *Return: Always 0
+ * main - Printing out fibonacci numbers
+ * Return: the fibonacci numbers within a given range
  */
-void fibonacci_sequence(int limit)
+
+int fibonacci(void)
 {
-	int a, b;
-	int count;
-	int temp;
+    int cnt;
+    int a, b, temp;
+    
+    int limit = 98;
 
-	a = 1;
-	b = 2;
+    a = 1;
+    b = 2;
+    cnt = 0;
+    while (cnt < limit)
+    {
+        if (cnt == 0)
+        {
+            printf("%d, ", a);
+        }
+        else if (cnt == 1)
+        {
+            printf("%d", b);
+        }
+        else
+        {
+            temp = a + b;
+            a = b;
+            b = temp;
 
-	while (count < limit)
-	{
-		if (count < limit - 1)
-		{
-			printf("%d, ", a);
-		}
-		else
-		{
-			printf("%d\n", a);
-		}
-
-		temp = b;
-		b = a + b;
-		a = temp;
-		count++;
-	}
+            printf(", %d", temp);
+        }
+        cnt++;
+    }
+    printf("\n");
+    return (0);
 }
-/**
- * main - calls the function fibonacci_sequence
- * Return:Success value 0
- */
+
 int main(void)
 {
-	fibonacci_sequence(98);
-	return (0);
+    fibonacci();
+    return (0);
 }
