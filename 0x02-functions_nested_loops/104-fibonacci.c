@@ -1,13 +1,14 @@
 #include <stdio.h>
 /**
- * main - Printing out fibonacci numbers
+ * fibonacci - Printing out fibonacci numbers
  * Return: the fibonacci numbers within a given range
  */
 
 int fibonacci(void)
 {
     int cnt;
-    int a, b, temp;
+    unsigned long a, b;
+    long temp;
     
     int limit = 98;
 
@@ -18,11 +19,11 @@ int fibonacci(void)
     {
         if (cnt == 0)
         {
-            printf("%d, ", a);
+            printf("%lu, ", a);
         }
         else if (cnt == 1)
         {
-            printf("%d", b);
+            printf("%lu", b);
         }
         else
         {
@@ -30,13 +31,17 @@ int fibonacci(void)
             a = b;
             b = temp;
 
-            printf(", %d", temp);
+            printf(", %lu", temp);
         }
         cnt++;
     }
     printf("\n");
     return (0);
 }
+
+/**
+ * main - calls the function
+ */
 
 int main(void)
 {
