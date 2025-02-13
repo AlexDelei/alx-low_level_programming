@@ -7,8 +7,7 @@
 int fibonacci(void)
 {
     int cnt;
-    unsigned long a, b;
-    long temp;
+    unsigned long a, b, temp;
     
     int limit = 98;
 
@@ -41,6 +40,7 @@ int fibonacci(void)
 
 /**
  * main - calls the function
+ * Return: Success value 0
  */
 
 int main(void)
