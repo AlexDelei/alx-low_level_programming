@@ -3,12 +3,11 @@
  * fibonacci - Printing out fibonacci numbers
  * Return: the fibonacci numbers within a given range
  */
-
 int fibonacci(void)
 {
     int cnt;
     unsigned long a, b, temp;
-    
+
     int limit = 98;
 
     a = 1;
@@ -42,7 +41,6 @@ int fibonacci(void)
  * main - calls the function
  * Return: Success value 0
  */
-
 int main(void)
 {
     fibonacci();
